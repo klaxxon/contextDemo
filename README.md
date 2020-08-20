@@ -11,7 +11,7 @@ Main creates the initial context with a cancel function:
 mainCtx, cancel := context.WithCancel(context.Background())
 ```
 <br/>
-Each child creates their own context off of the parent.  This allows a call to the parent cancel() to propogate through to the children.<br/>
+Each child creates their own context off of the parent.  This allows a call to the parent cancel() to propogate through to the children but still provides the child the ability to cancel just their own children.<br/>
 
 ```
 mctx, cancel := context.WithCancel(ctx)
