@@ -14,7 +14,7 @@ is all goroutines being ended throught the one main cancel with each child makin
 	CHILDWAIT  = 10
 <br/>
 <br/>
-<code>
+```
 // All children are created
 2020/08/20 13:38:09 Child 2 started
 2020/08/20 13:38:09 Grandchild 2 of 2 started
@@ -43,7 +43,7 @@ is all goroutines being ended throught the one main cancel with each child makin
 2020/08/20 13:38:10 Grandchild 1 of 0 done
 2020/08/20 13:38:10 Child 0 done
 2020/08/20 13:38:10 Finished!
-</code>
+```
 
 <br/>
 As you can see all of the grandchildren ended without a need to call each of the childrens cancels, it was passed through to the childs context given to the grandchild.  However, each child still waited for it's child to exit before notifying the main it was done.
@@ -54,7 +54,7 @@ In this example, the parent waits longer than it will take the children to cance
 	PARENTWAIT = 5
 	CHILDWAIT  = 1
 <br/>
-<code>
+```
 // All children are created
 2020/08/20 13:39:16 Child 2 started
 2020/08/20 13:39:16 Grandchild 2 of 2 started
@@ -89,4 +89,4 @@ In this example, the parent waits longer than it will take the children to cance
 // Main still waits 5 seconds, but everyone is done so it just finishes
 2020/08/20 13:39:21 Main parent cancelling!
 2020/08/20 13:39:21 Finished!
-</code>
+```
