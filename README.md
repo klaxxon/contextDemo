@@ -1,15 +1,18 @@
 # contextDemo
-Golang context demonstration
+## Golang context demonstration
 <br/>
 For this demo, I have a main context which can show how a cancel can cascade through
 to all other derived contexts.  The child contexts also create their own context off of the parent
 so they can cancel just their children.
 <br/>
+<br/>
 In the first run, the parent is going to cancel before any of the children.  This will result
 is all goroutines being ended throught the one main cancel with each child making sure their own goroutines end properly.
 <br/>
+<br/>
 	PARENTWAIT = 1
 	CHILDWAIT  = 10
+<br/>
 <br/>
 <code>
 // All children are created
