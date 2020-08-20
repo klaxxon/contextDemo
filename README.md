@@ -10,7 +10,7 @@ In the first run, the parent is going to cancel before any of the children.  Thi
 is all goroutines being ended throught the one main cancel with each child making sure their own goroutines end properly.
 <br/>
 <br/>
-	PARENTWAIT = 1
+	PARENTWAIT = 1<br/>
 	CHILDWAIT  = 10
 <br/>
 <br/>
@@ -52,7 +52,7 @@ As you can see all of the grandchildren ended without a need to call each of the
 <br/>
 In this example, the parent waits longer than it will take the children to cancel their own children.  The children wait CHILDWAIT seconds plus their ID so they are staggered.
 <br/>
-	PARENTWAIT = 5
+	PARENTWAIT = 5<br/>
 	CHILDWAIT  = 1
 <br/>
 
