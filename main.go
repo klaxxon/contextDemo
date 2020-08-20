@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	PARENTWAIT = 5
-	CHILDWAIT  = 1
+	PARENTWAIT = 1
+	CHILDWAIT  = 10
 )
 
 func grandChild(ctx context.Context, wg *sync.WaitGroup, id int) {
