@@ -3,7 +3,22 @@
 <br/>
 For this demo, I have a main context which can show how a cancel can cascade through
 to all other derived contexts.  The child contexts also create their own context off of the parent
-so they can cancel just their children.
+so they can cancel just their children.<br/>
+<br/>
+Main creates the initial context with a cancel function:
+
+```
+mainCtx, cancel := context.WithCancel(context.Background())
+```
+<br/>
+Each child creates their own context off of the parent.  This allows a call to the parent cancel() to propogate through to the children.<br/>
+
+```
+mctx, cancel := context.WithCancel(ctx)
+	defer cancel()
+```
+<br/>
+The defer is a good practice to get into since you can create contexts with timers or deadlines and if they are not cancelled, the timers will hang around (whatever the timer/deadline is) and keep the context alive in memory.<br/>
 <br/>
 <br/>
 In the first run, the parent is going to cancel before any of the children.  This will result in all goroutines being ended through the one main cancel with each child making sure their own goroutines end properly.
@@ -50,6 +65,7 @@ As you can see all of the grandchildren ended without a need to call each of the
 <br/>
 <br/>
 In this example, the parent waits longer than it will take the children to cancel their own children.  The children wait CHILDWAIT seconds plus their ID so they are staggered.
+<br/>
 <br/>
 	PARENTWAIT = 5<br/>
 	CHILDWAIT  = 1
