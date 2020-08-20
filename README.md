@@ -14,6 +14,7 @@ is all goroutines being ended throught the one main cancel with each child makin
 	CHILDWAIT  = 10
 <br/>
 <br/>
+
 ```
 // All children are created
 2020/08/20 13:38:09 Child 2 started
@@ -54,6 +55,7 @@ In this example, the parent waits longer than it will take the children to cance
 	PARENTWAIT = 5
 	CHILDWAIT  = 1
 <br/>
+
 ```
 // All children are created
 2020/08/20 13:39:16 Child 2 started
