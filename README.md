@@ -17,18 +17,18 @@ is all goroutines being ended throught the one main cancel with each child makin
 
 ```
 // All children are created
-2020/08/20 13:38:09 Child 2 started
-2020/08/20 13:38:09 Grandchild 2 of 2 started
-2020/08/20 13:38:09 Child 0 started
-2020/08/20 13:38:09 Grandchild 2 of 0 started
-2020/08/20 13:38:09 Grandchild 0 of 2 started
-2020/08/20 13:38:09 Grandchild 1 of 2 started
-2020/08/20 13:38:09 Child 1 started
-2020/08/20 13:38:09 Grandchild 2 of 1 started
-2020/08/20 13:38:09 Grandchild 0 of 0 started
-2020/08/20 13:38:09 Grandchild 1 of 0 started
-2020/08/20 13:38:09 Grandchild 0 of 1 started
-2020/08/20 13:38:09 Grandchild 1 of 1 started
+2020/08/20 13:56:45 Child 0 started
+2020/08/20 13:56:45 Grandchild 2 of 0 started
+2020/08/20 13:56:45 Grandchild 0 of 0 started
+2020/08/20 13:56:45 Grandchild 1 of 0 started
+2020/08/20 13:56:45 Child 1 started
+2020/08/20 13:56:45 Grandchild 2 of 1 started
+2020/08/20 13:56:45 Grandchild 0 of 1 started
+2020/08/20 13:56:45 Grandchild 1 of 1 started
+2020/08/20 13:56:45 Child 2 started
+2020/08/20 13:56:45 Grandchild 2 of 2 started
+2020/08/20 13:56:45 Grandchild 1 of 2 started
+2020/08/20 13:56:45 Grandchild 0 of 2 started
 // As second later, main parent context cancel() is called
 2020/08/20 13:38:10 Main parent cancelling!
 2020/08/20 13:38:10 Grandchild 2 of 0 done
@@ -58,18 +58,18 @@ In this example, the parent waits longer than it will take the children to cance
 
 ```
 // All children are created
-2020/08/20 13:39:16 Child 2 started
-2020/08/20 13:39:16 Grandchild 2 of 2 started
-2020/08/20 13:39:16 Child 0 started
-2020/08/20 13:39:16 Grandchild 2 of 0 started
-2020/08/20 13:39:16 Grandchild 0 of 2 started
-2020/08/20 13:39:16 Child 1 started
-2020/08/20 13:39:16 Grandchild 1 of 0 started
-2020/08/20 13:39:16 Grandchild 1 of 2 started
-2020/08/20 13:39:16 Grandchild 1 of 1 started
-2020/08/20 13:39:16 Grandchild 2 of 1 started
-2020/08/20 13:39:16 Grandchild 0 of 0 started
-2020/08/20 13:39:16 Grandchild 0 of 1 started
+2020/08/20 13:56:45 Child 0 started
+2020/08/20 13:56:45 Grandchild 2 of 0 started
+2020/08/20 13:56:45 Grandchild 0 of 0 started
+2020/08/20 13:56:45 Grandchild 1 of 0 started
+2020/08/20 13:56:45 Child 1 started
+2020/08/20 13:56:45 Grandchild 2 of 1 started
+2020/08/20 13:56:45 Grandchild 0 of 1 started
+2020/08/20 13:56:45 Grandchild 1 of 1 started
+2020/08/20 13:56:45 Child 2 started
+2020/08/20 13:56:45 Grandchild 2 of 2 started
+2020/08/20 13:56:45 Grandchild 1 of 2 started
+2020/08/20 13:56:45 Grandchild 0 of 2 started
 // First child cancels its children
 2020/08/20 13:39:17 Child 0 cancelling kids
 2020/08/20 13:39:17 Grandchild 2 of 0 done

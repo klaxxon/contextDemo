@@ -58,6 +58,7 @@ func main() {
 	for a := 0; a < 3; a++ {
 		wg.Add(1)
 		go child(mainCtx, wg, a)
+		time.Sleep(10 * time.Millisecond)
 	}
 	time.Sleep(PARENTWAIT * time.Second)
 	log.Println("Main parent cancelling!")
